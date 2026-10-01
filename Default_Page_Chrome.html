@@ -20,39 +20,38 @@
       padding: 20px 30px 0;
     }
 
-    /* Chia tỉ lệ 3 phần bằng nhau để đẩy khung giờ ra chính giữa */
     .top-left, .top-center, .top-right {
       flex: 1;
     }
 
-    /* Khu vực gộp chữ Xin chào và cụm GIF bộ ba Chiikawa */
+
     .greeting-container {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    /* ĐÃ SỬA: Thu nhỏ chữ Xin chào xuống 16px */
+
     .greeting {
       font-size: 16px; 
       text-shadow: 2px 2px 3px #000;
       white-space: nowrap;
     }
 
-    /* ĐÃ SỬA: Thu nhỏ các ảnh GIF xuống 26px để cân bằng với cỡ chữ */
+
     .greeting-gif {
       width: 26px; 
       height: auto;
     }
 
-    /* Đưa thông tin ngày giờ ra giữa */
+
     .top-center {
       text-align: center;
       text-shadow: 2px 2px 3px #000;
       line-height: 1.3;
     }
 
-    /* ĐÃ SỬA: Thu nhỏ chữ ngày tháng xuống 14px */
+
   #date {
       margin-bottom: 2px;
       font-size: 14px;
@@ -60,38 +59,35 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 0px 0px 5px rgba(0, 0, 0, 0.8);
     }
 
-    /* Đồng hồ: Trắng tinh khiết, cỡ chữ nổi bật, đổ bóng kép (Double Shadow) siêu dày */
     #clock {
       font-size: 24px; 
       color: #ffffff; 
-      /* Đổ bóng 2 lớp giúp chữ luôn luôn nổi bần bật dù bạn có thay nền trắng tinh đi chăng nữa */
+
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.7);
     }
-    /* Khu vực thời tiết ở góc phải cũ */
+
     .top-right {
       text-align: right;
       text-shadow: 2px 2px 3px #000;
     }
 
-    /* ĐÃ SỬA: Thu nhỏ thời tiết xuống 16px cho đồng bộ với góc trái */
+
     #weather {
       font-size: 16px;
       color: #ffcc66;
     }
 
-    /* Giữ nguyên vị trí layout shortcuts ban đầu của bạn */
-    /* Giữ nguyên vị trí layout shortcuts ban đầu của bạn và không bị cuộn trang */
+
     .shortcuts {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 12px;
       max-width: 650px;
-      margin: 0 auto; /* Đổi về 0 auto để không bị đẩy tràn màn hình */
+      margin: 0 auto; 
       text-align: center;
-      padding-top: 16cm; /* Quay lại dùng padding-top như code gốc của bạn để cố định vị trí */
+      padding-top: 16cm; 
     }
 
-    /* Làm mới các ô chứa link cho sắc nét và đổi font */
     .shortcuts a {
       text-decoration: none;
       color: white;
@@ -161,7 +157,7 @@
 
 
   <script>
-    // 1. Cập nhật Đồng hồ và Ngày tháng
+
     function updateClock() {
       const now = new Date();
       const h = now.getHours().toString().padStart(2, '0');
@@ -179,7 +175,7 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // 2. Tự động lấy thời tiết thực tế dựa trên tọa độ vị trí trình duyệt
+
     function getWeather() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
